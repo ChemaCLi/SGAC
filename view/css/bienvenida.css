@@ -1,0 +1,79 @@
+
+hgroup{
+    text-align: center;
+    /*border: solid #09f 1px;*/
+    margin: 5px;
+}
+
+/*
+ * El conjunto de opciones en circulo
+ */
+.contenedor-opciones{
+    /*border: solid #a00 1px;*/
+    width: 70%;
+    height: 300px;
+    margin: 10px auto;
+    padding: 0;
+}
+
+.opcion{
+    /*border: solid #c00 1px;*/
+    width: 30%;
+    margin: 10px .9%;
+    padding: 5px;
+    float: left;
+    text-align: center;
+    transition: all .3s ease;
+}
+
+
+#opcion1{
+    background: #4E94C9;   
+}
+#opcion2{
+    background: #4DC6A4;   
+}
+#opcion3{
+    background: #F4B33A;   
+}
+
+/*
+ * Efectos para los circulos
+ */
+.opcion > a > img{
+    /*border: solid #0a0 1px;*/
+    border-radius: 50%;
+    width: 100px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 50px;
+    text-align: inherit;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 0px 0px rgb(206, 206, 206);
+    transition: all .3s ease;
+}
+
+.opcion > a > img:hover{
+    -webkit-box-shadow: 0px 0px 0px 50px  rgba(84,104,95,0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

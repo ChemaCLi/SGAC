@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<script type="text/javascript">
+		function ejecutarajax(){
+       	var conexion;
+       	if(window.XMLHttpRequest)   {
+       		conexion = new XMLHttpRequest();
+       	}else
+       	  {
+       	conexion= new ActiveXObject("Microsoft.XMLHTTP");
+       	}
+       	conexion.onreadystatechange=function(){
+       		if(conexion.readyState==4 && conexion.status==200){
+       			document.getElementById("midiv").innerHTML=conexion.responseText;
+       		}
+       	}
+       	
+       	conexion.open("GET","index2.html",true);
+       	conexion.send();
+       }
+</script>
+	<meta charset="UTF-8">
+	 <link rel="icon" type="image/png" href="../img/icons/driver_icon.png"/>
+            <title>INICIO:: ALUMNOS</title>
+	<link rel="stylesheet"  href="../css/main.css">
+</head>
+<body>
+	
+	<div id="navbar">
+		<div class="contenedor1" id="uno">
+			<img class="icon" src="../img/icons/home3.png">
+			<p class="text">Inicio</p>
+		</div>
+
+
+		<div  class="contenedor" id="dos">
+			<img class="icon" src="../img/icons/switch.png">
+			<p class="text">Salir</p>
+		</div>
+
+
+		<div  class="contenedor" id="tres">
+			<img class="icon" src="../img/icons/question.png">
+			<p class="text">Ayuda</p>
+		</div>
+
+
+		<div  class="contenedor" id="cuatro">
+			<img class="icon" src="../img/icons/mail4.png">
+			<p class="text">Enviar Correo</p>
+		</div>
+
+		<div  class="contenedor" id="cinco">
+			<img class="icon" src="../img/icons/file-pdf.png">
+			<p class="text">Imp Carta Liberacion</p>
+		</div>
+	</div>
+
+	<div id="navegador">
+		<ul>
+			<li><a href="#">Actividades Actuales</a></li>
+			<li><a href="#">Instructores</a></li>
+			<li><a href="#">Avisos Importantes</a></li>
+		</ul>
+	</div>
+
+   
+
+		<section> 	
+			<div id="midiv"></div>
+	        <button type="button" onclick="ejecutarajax()">Ingresar</button>		
+			
+				<h3>!!!CHEMA AHI ESTA LO QUE PEDISTE!!!!</h3>
+					
+			</P>
+		</section>
+
+	</body>
+</html>

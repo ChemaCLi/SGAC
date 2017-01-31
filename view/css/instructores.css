@@ -1,0 +1,263 @@
+/*
+ *Contenido
+ */
+/*
+section{
+	text-align: center;
+ 	background-image: url(http://localhost/SGAC_v1.0/trunk/view/img/icons/ivierno.jpg);
+ 	background-size: 100vw 100vh;
+ 	background-attachment: fixed;
+ 	margin: 0;
+	position: absolute;
+	margin-top:105px;
+	margin-left: 150px;
+}
+*/
+/*
+body{
+	background-image: url("../img/5.jpg");
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+*/
+
+#contenido{
+    text-align: justify;
+	/*background: #000;*/
+ 	/*background-size: 100vw 100vh;*/
+ 	/*background-attachment: fixed;*/
+	position: absolute;
+	margin-top:150px;
+    width: 100%;
+	/*margin-left: 150px;*/
+}
+
+#sub_contenido{
+	margin: 0px 50px 0px 250px;
+}
+
+button{	cursor: pointer; }/*Para que el puntero cambie cuando se trate de un botón*/
+
+/*
+ * inicio_administrador
+ */
+
+.contenedor-opciones{
+    width: 80%;
+    /*border: solid #00F 1px;*/
+    height: 300px;
+    margin: 50px auto;
+    padding: 0;
+}
+
+.opcion{
+    /*border: solid #c00 1px;*/
+    width: 30%;
+    margin: 10px .9%;
+    padding: 5px;
+    float: left;
+    text-align: center;
+}
+
+.opcion > a{
+	margin: 20px;
+}
+
+.opcion > a > img{
+    /*border: solid #0a0 1px;*/
+    border-radius: 50%;
+    width: 100px;
+    margin: auto;
+    padding: 50px;
+    text-align: inherit;
+	cursor: pointer;
+}
+
+/*
+ * Efectos circulos para pantalla de inicio de administrador
+ */
+
+#contenedor{
+	-webkit-transition: height .4s;
+}
+
+#icon1, #icon2, #icon3{
+	-webkit-transition:box-shadow .5s;
+}
+
+/*
+ * Estilos de cada boton de pantalla inicio de administrador
+ */
+#icon1{
+	-webkit-box-shadow: 0px 0px 0px 0px rgba(84,104,95,1);
+	background: #54685F;
+}
+
+#icon2{
+	-webkit-box-shadow: 0px 0px 0px 0px rgba(229,39,39,1);
+	background: #E52727;
+}
+
+#icon3{
+	-webkit-box-shadow: 0px 0px 0px 0px rgba(26,116,158,1);
+	background: #1A749E;
+}
+
+#icon1:hover{
+	-webkit-box-shadow: 0px 0px 0px 50px  rgba(84,104,95,0);
+}
+
+#icon2:hover{
+	-webkit-box-shadow: 0px 0px 0px 50px rgba(229,39,39,0);
+}
+
+#icon3:hover{
+	-webkit-box-shadow: 0px 0px 0px 50px rgba(26,116,158,0);
+}
+
+/*  barra lateral */
+#lateral{
+	margin-top: 0;
+	width:15%;
+	height: 60%;
+	background-color: #A3276B; 
+	position: fixed;
+	z-index: 800;
+}
+
+#menulateral1,#menulateral2,#menulateral3{
+	padding: 10px;
+	transition: .3s;
+	background: #7F1A50;
+	cursor: pointer;
+}
+
+#menulateral1{
+	margin-top: 50px;
+}
+
+#menulateral2,#menulateral3{
+	margin-top: 5px;
+}
+
+#menulateral1:hover,#menulateral2:hover,#menulateral3:hover{
+	background: #930752;
+	width: 200px;
+}
+
+
+
+
+.menu{
+	padding: 10px;
+	border-right: solid #FFF 1.5px;
+	color: #FFF;
+	text-align: left;
+}
+
+.menu:hover{
+}
+
+/*
+ * Listado de las actividades para la gestión
+ */
+
+#listado_actividades{
+	width: auto;
+	margin: 10px;
+	padding: 10px;
+	background: #930752;
+	color: #fff;
+	transition: .3s;
+}
+
+#listado_actividades:hover{
+	background: #5E0C38;
+}
+
+#listado_actividades > h3{
+	color: #eee;
+}
+
+ #tabla_resultados{
+	display: block;
+	min-height: 400px;
+	margin: auto;
+	width: 100%;
+	/*border: solid #aaa 1px;*/
+}
+
+/*
+ * Para el botón de crear nueva actividad complementaria
+ */
+div#btn_nueva_actividad > img{
+	margin: 5px auto;
+	width: 40px;
+	height: 40px;
+}
+div#btn_nueva_actividad{
+	width: 50px;
+	height: 50px;
+	right: 0;
+	bottom: 50px;
+	margin-right: 10px;
+	z-index: 800;
+	position:fixed;
+	background-color: #FFF60C; 
+	border-radius: 50%;
+    padding: 10px;
+	cursor: pointer;
+	-webkit-transition: .5s;
+	-webkit-transition:box-shadow .3s;
+	-webkit-box-shadow: 0px 0px 0px 50px rgba(229,39,39,0);
+}
+div#btn_nueva_actividad:hover{
+	background-color: #FFCE0C; 
+	-webkit-box-shadow: 0px 0px 0px 0px rgba(255,240,80,1);
+}
+
+
+/*
+ * PAra el header de la tabla de resultados de alumnos por actividad
+ */
+tr#fila_header{
+	width: auto;
+	display: block;
+	background: #A3276B;
+	color: #fff;
+	padding: 5px;
+}
+
+tr#fila_header > th{
+	display: inline;
+	/*border: solid #0D9661 1px;*/
+}
+
+tr#fila_header > th#indice{ margin-left: 50px; }
+tr#fila_header > th#columna1{ margin-right: 100px; }
+tr#fila_header > th#columna2{ margin-right: 100px; }
+
+/*
+ * Para cada fila de resultado de la tabla alumnos por actividad
+ */
+tr#fila_res{
+	width: 100%;
+	display: block;
+	background: #f0f0f0;
+	margin:0;
+	border-bottom: solid #8D97A8 2px;
+	transition: all 0.2s ease;
+}
+
+tr#fila_res:hover{
+	background: #D3D1D1;
+}
+
+tr#fila_res > td{
+	text-align: center;
+	display: inline;
+}
+
+tr#fila_res > td#columna1{ margin-left: 50px; margin-right: 170px; }
+tr#fila_res > td#columna2{ margin-right: 100px; }

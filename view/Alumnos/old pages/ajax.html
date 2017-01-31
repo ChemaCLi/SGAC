@@ -1,0 +1,33 @@
+
+<html>
+	<head>
+	
+		<script type="text/javascript"> //Aqui empiesa el codigo de ajax
+		function ejecutarajax(){
+       	var conexion;
+       	if(window.XMLHttpRequest)   {
+       		conexion = new XMLHttpRequest();
+       	}else
+       	  {
+       	conexion= new ActiveXObject("Microsoft.XMLHTTP");
+       	}
+       	conexion.onreadystatechange=function(){
+       		if(conexion.readyState==4 && conexion.status==200){
+       			document.getElementById("midiv").innerHTML=conexion.responseText;
+       		}
+       	}
+       	
+       	conexion.open("GET","index1.html",true);// En esta parte es donde se invoca que mandamos a llamar
+       	conexion.send();
+       }
+</script>
+</head>
+<body> 
+	 <!--Aqui se puso uun id para mandar a llamar el
+        //metodo onredystatechangeque esta como a la mitada del codigo ajax-->
+	<div id="midiv"></div>
+	<button type="button" onclick="ejecutarajax()">Ingresar</button>
+			
+</body>
+</html>
+  

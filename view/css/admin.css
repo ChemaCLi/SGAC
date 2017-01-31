@@ -1,0 +1,595 @@
+/*
+ *Contenido
+ */
+/*
+section{
+	text-align: center;
+ 	background-image: url(http://localhost/SGAC_v1.0/trunk/view/img/icons/ivierno.jpg);
+ 	background-size: 100vw 100vh;
+ 	background-attachment: fixed;
+ 	margin: 0;
+	position: absolute;
+	margin-top:105px;
+	margin-left: 150px;
+}
+*/
+/*
+body{
+	background-image: url("../img/5.jpg");
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+*/
+body{
+	background-image: url("../img/background_1.jpg");
+	background-attachment: fixed;
+}
+
+#contenido{
+    text-align: justify;
+	/*background: #000;*/
+ 	/*background-size: 100vw 100vh;*/ 
+	position: absolute;
+	padding-top:100px;
+    width: 100%;
+	/*margin-left: 150px;*/
+}
+
+#sub_contenido{
+	margin: 0px 50px 0px 200px; 
+}
+
+button{	cursor: pointer; }/*Para que el puntero cambie cuando se trate de un botón*/
+input[type = "button"]{ cursor: pointer; }/*Para que el puntero cambie cuando se trate de un botón*/
+/*
+ * inicio_administrador
+ */
+
+.contenedor-opciones{
+    width: 80%;
+    /*border: solid #00F 1px;*/
+    height: 300px;
+    margin: 50px auto;
+    padding: 0;
+}
+
+.opcion{
+    /*border: solid #c00 1px;*/
+    width: 30%;
+    margin: 10px .9%;
+    padding: 5px;
+    float: left;
+    text-align: center;
+}
+
+.opcion > a{
+	margin: 20px auto;
+	border-radius: 50%;
+	width: 130px;
+	padding: 50px;
+    text-align: inherit;
+	cursor: pointer;
+}
+
+.opcion > a > img{
+    /*border: solid #0a0 1px;*/
+    margin: auto;
+	width: 130px;
+	height:  130px;
+}
+
+/*
+ * Títulos de cada pantalla
+ */
+
+section#sub_contenido div#titulo_pantalla{
+	margin-bottom: 30px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	color: #540931;
+}
+
+section#sub_contenido div#titulo_pantalla img{
+	width: 50px;
+	height: 50px;
+	margin: auto;
+}
+
+/*
+ * Efectos circulos para pantalla de inicio de administrador
+ */
+.opcion > a#gestionar_actividades{ 
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(84,104,95,1);
+	background: #B2B2B2; 
+}
+
+.opcion > a#gestionar_alumnos{ 
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(229,39,39,1);
+	background: #E52727;
+}
+
+.opcion > a#gestionar_instructores{ 
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(26,116,158,1);
+	background: #1A749E;
+}
+
+a#gestionar_actividades, a#gestionar_alumnos, a#gestionar_instructores{
+	-webkit-transition:box-shadow .5s;
+}
+
+/*
+ * Estilos de cada boton de pantalla inicio de administrador
+ */  
+a#gestionar_actividades:hover{
+	-webkit-box-shadow: 0px 0px 0px 50px  rgba(84,104,95,0);
+}
+
+a#gestionar_alumnos:hover{
+	-webkit-box-shadow: 0px 0px 0px 50px rgba(229,39,39,0);
+}
+
+a#gestionar_instructores:hover{
+	-webkit-box-shadow: 0px 0px 0px 50px rgba(26,116,158,0);
+}
+
+/*  barra lateral */
+#lateral{
+	top: 0;
+	width:100px;
+	height: 100%;
+	/*background-color: #A3276B; */
+	/*background-color: #554C60;*/
+	background-color: rgb(211, 207, 207);
+	position: fixed;
+	z-index: 800;
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+}
+
+div#lateral  div > a > img{
+	width: 50px;
+	height: 50px; 
+	margin: 10px auto;
+}
+
+div#lateral div a{
+	width: 70px;
+	height: 70px;
+	margin: auto; 
+	/*background-color: #911859;*/
+	/*border-radius: 20%;*/
+	/*border: solid #fff 2px;*/
+	border: solid #9E9E9E 4px;
+	border-radius: 10%;
+	transition: all .3s ease;
+	margin-top: 50px;
+}
+
+div#lateral div a:hover{
+	/*background-color: #540931;*/
+	border: solid #7C104A 4px;
+	background-color: #EFF2F4;
+	box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, .2);
+}
+
+div#lateral  div#menulateral1{
+	margin-top: 200px;
+}
+
+/*
+#menulateral1,#menulateral2,#menulateral3{
+	padding: 10px;
+	transition: .3s;
+	background: #7F1A50;
+	cursor: pointer;
+}
+
+#menulateral1{
+	margin-top: 150px;
+}
+
+#menulateral2,#menulateral3{
+	margin-top: 5px;
+}
+
+#menulateral1:hover,#menulateral2:hover,#menulateral3:hover{
+	background: #930752;
+	width: 200px;
+}
+
+.menu{
+	padding: 10px;
+	border-right: solid #FFF 1.5px;
+	color: #FFF;
+	text-align: left;
+}
+
+.menu:hover{
+}*/
+
+/*
+ * Listado de las actividades para la gestión
+ */
+
+#listado_actividades{
+	width: auto;
+	margin: 10px;
+	padding: 10px;
+	/*background: #930752;*/
+	background: #FFFFFF;
+	/*border: solid #930752 2px;*/
+	border: solid #158AB5 2px; 
+	transition: .3s;
+	color: #252525;
+	box-shadow: 5px 5px 2px rgba(0, 0, 0, .3);
+}
+
+#listado_actividades:hover{
+	/*background: #7C104A;*/
+	background: #FFFFFF;
+	border: solid #166784 2px; 
+}
+
+#listado_actividades > h3{
+	color: #eee;
+}
+
+ #tabla_resultados{
+	display: block;
+	min-height: 400px;
+	margin: auto;
+	width: 100%;
+	/*border: solid #aaa 1px;*/
+}
+
+/*
+ * Para los datos de cada actividad
+ */
+div#busqueda > div#listado_actividades > ul#datos_actividad{ 
+	width: 75%; 
+	float: left;
+}
+
+div#busqueda > div#listado_actividades > div#operaciones_actividades{
+	display: inline-block; 
+	margin-left:0px; 
+	width: 15%; 
+	margin-left: 5%;
+}
+
+/*
+ * Para los botones de cada resultado de actividades
+ */
+div#busqueda > div#listado_actividades > div#operaciones_actividades form{
+	text-align: right;
+}
+div#busqueda > div#listado_actividades > div#operaciones_actividades form > button{
+	/*
+	margin-right: 20px;
+	display: inline-block;
+	/*background: #31384A;*/
+	min-width: 150px;
+	margin: 10px;
+    background: #148093;
+	color:#fff;
+	padding: 10px;
+    outline: solid #148093 3px;
+	border:0px;
+    border-radius: 5px;
+	transition: all .3s ease; 
+	cursor: pointer;
+}
+div#busqueda > div#listado_actividades > div#operaciones_actividades form > button:hover{
+	outline: solid #165A8E 3px;
+	background-color: #165A8E;
+	color: #ffffff;
+}
+
+/*
+ * Para los botones flotantes
+ */
+div#btn_nueva_actividad > a > img,
+div#btn_gestionar_lugares > a > img,
+div#btn_actividades_inactivas > a > img,
+div#btn_nuevo_lugar > a > img,
+div#btn_actividades_activas > a > img{
+	margin: 5px auto;
+	width: 40px;
+	height: 40px;
+}
+
+div#btn_nueva_actividad,
+div#btn_gestionar_lugares,
+div#btn_actividades_inactivas,
+div#btn_nuevo_lugar,
+div#btn_actividades_activas{
+	width: 50px;
+	height: 50px;
+	right: 0;
+	margin-right: 10px;
+	z-index: 800;
+	position:fixed;
+	background-color: #7392A3; 
+	border-radius: 50%;
+    padding: 10px;
+	cursor: pointer;
+	-webkit-transition: .5s;
+	-webkit-transition:box-shadow .3s;
+	-webkit-box-shadow: 0px 0px 0px 50px rgba(229, 39, 39, 0);
+}
+
+div#btn_nueva_actividad:hover,
+div#btn_gestionar_lugares:hover,
+div#btn_actividades_inactivas:hover,
+div#btn_nuevo_lugar:hover,
+div#btn_actividades_activas:hover{
+	background-color: #495B63; 
+	-webkit-box-shadow: 0px 0px 0px 0px rgba(73,91,99,1);
+}
+
+/*
+ * Para el botón de crear nueva actividad complementaria
+ */ 
+div#btn_nueva_actividad{ bottom: 50px; }
+div#btn_nuevo_lugar{ bottom: 50px; } 
+
+/*
+ * Para elboton gestionar lugares
+ */
+div#btn_gestionar_lugares{ bottom: 140px; }
+ 
+
+/*
+ * Para elboton ver actividades inactivas
+ */ 
+div#btn_actividades_inactivas{ bottom: 230px; }
+div#btn_actividades_activas{ bottom: 230px; }
+
+/*
+ * Para la pantalla de detalles de la actividad
+ */
+section#sub_contenido > div#detalles_actividad p { display: inline-block; font-weight: bold; }
+section#sub_contenido > div#detalles_actividad li { margin-bottom: 10px; }
+
+section#sub_contenido > div#detalles_actividad{
+	width: auto;
+	min-height: 430px;
+	margin-bottom: 200px;
+	padding: 20px; 
+	/*background-color: #FFFFFF;*/
+	/*box-shadow: 5px 5px 2px rgba(0, 0, 0, .3);*/
+}
+
+section#sub_contenido > div#detalles_actividad > div#datos_actividad{
+	width: 35%;
+	min-height: 400px;
+	padding: 20px; 
+	/*background-color: #930752;*/
+	/*background-color: #106370;*/
+	background-color: #FFFFFF;
+	border: solid #106370 3px;
+	color: #252525;
+	float: left;
+	margin-right: 50px;
+	box-shadow: 5px 5px 2px rgba(0, 0, 0, .3);
+}
+
+section#sub_contenido > div#detalles_actividad > iframe#mapa_detalles{
+	width: 50%;
+	min-height: 400px;
+	padding: 10px;
+	border: none;
+}
+
+section#sub_contenido > div#detalles_actividad > div#datos_actividad form{
+	width: auto;
+	text-align: center;
+}
+
+section#sub_contenido > div#detalles_actividad > div#datos_actividad > form > button {
+	display: inline-block; 
+	min-width: 150px;
+	margin: 10px;
+    background: #148093;
+	color:#fff;
+	padding: 10px;
+    outline: solid #148093 3px;
+	border:0px;
+    border-radius: 5px;
+	transition: all .3s ease; 
+}
+section#sub_contenido > div#detalles_actividad > div#datos_actividad > form > button:hover { outline: solid #165A8E 3px; background-color: #165A8E; }
+
+/*
+ * Para la pantalla de modificar una actividad
+ */
+section#sub_contenido > div#pantalla_modificar_actividad > p{ color: #E51414;}
+
+section#sub_contenido > div#pantalla_modificar_actividad{
+	width: 60%;
+	margin: auto;
+	margin-bottom: 150px;
+	padding: 50px;
+	text-align: center;
+	font-size: 20px;
+	background-color: #FFFFFF;
+	border: solid #106370 3px;
+	box-shadow: 5px 5px 2px rgba(0, 0, 0, .3);
+}
+
+section#sub_contenido > div#pantalla_modificar_actividad input,
+section#sub_contenido > div#pantalla_modificar_actividad select,
+section#sub_contenido > div#pantalla_modificar_actividad textarea{
+	margin:auto;
+	margin-bottom: 10px;
+	text-align: center;
+	padding: 5px;
+	border: none;
+	border-bottom: solid #295499 2px;
+}
+
+section#sub_contenido > div#pantalla_modificar_actividad select{
+	min-width: 150px;
+}
+
+section#sub_contenido > div#pantalla_modificar_actividad input[type = "text"]{ min-width: 300px;}
+
+section#sub_contenido > div#pantalla_modificar_actividad textarea{
+	width: 500px;
+	padding: 10px;
+	height: 100px;
+	text-align: justify;
+	resize: none;
+	border: solid #295499 1px;
+}
+
+section#sub_contenido > div#pantalla_modificar_actividad > div#botones{ text-align: center;  margin: 20px auto; }
+
+section#sub_contenido > div#pantalla_modificar_actividad > div#botones input#enviar_datos,
+section#sub_contenido > div#pantalla_modificar_actividad > div#botones button#btn_cancelar_gestionar_actividades{
+	display: inline-block; 
+	min-width: 150px;
+	margin: 20px;
+    background: #148093;
+	color:#fff;
+	padding: 10px;
+    outline: solid #148093 3px;
+	text-align: center;
+	border:0px;
+    border-radius: 5px;
+	transition: all .3s ease; 
+}
+section#sub_contenido > div#pantalla_modificar_actividad > div#botones input#enviar_datos:hover,
+section#sub_contenido > div#pantalla_modificar_actividad > div#botones button#btn_cancelar_gestionar_actividades:hover{
+	outline: solid #165A8E 3px;
+	background-color: #165A8E; 
+}
+
+/*
+ * Para la pantalla de crear una actividad, prácticamente es una réplica de la pantalla de modificar actividades, pero se separa por si se desea darles estilos diferentes
+ */
+ection#sub_contenido > div#pantalla_registrar_actividad > p{ color: #E51414;}
+
+section#sub_contenido > div#pantalla_registrar_actividad{
+	width: 60%;
+	margin: auto;
+	margin-bottom: 150px;
+	padding: 50px;
+	text-align: left;
+	font-size: 20px;
+	background-color: #FFFFFF;
+	border: solid #106370 3px;
+	box-shadow: 5px 5px 2px rgba(0, 0, 0, .3);
+}
+
+section#sub_contenido > div#pantalla_registrar_actividad input,
+section#sub_contenido > div#pantalla_registrar_actividad select,
+section#sub_contenido > div#pantalla_registrar_actividad textarea{
+	/*margin:auto;*/
+	margin-bottom: 10px;
+	text-align: left;
+	padding: 5px;
+	outline-color: rgba(255, 255, 255, 0);
+	border: none;
+	border-bottom: solid #295499 2px;
+}
+
+section#sub_contenido > div#pantalla_registrar_actividad input[type = "text"]{
+	min-width: 300px;
+}
+
+section#sub_contenido > div#pantalla_registrar_actividad select{
+	min-width: 150px;
+	border: solid #295499 2px;
+}
+
+section#sub_contenido > div#pantalla_registrar_actividad textarea{
+	width: 500px;
+	padding: 10px;
+	height: 100px;
+	text-align: justify;
+	resize: none;
+	border: solid #295499 2px;
+}
+
+section#sub_contenido > div#pantalla_registrar_actividad > div#botones{ text-align: center; margin: 20px auto; }
+
+section#sub_contenido > div#pantalla_registrar_actividad > div#botones input#enviar_datos,
+section#sub_contenido > div#pantalla_registrar_actividad > div#botones button#btn_cancelar_gestionar_actividades{
+	display: inline-block; 
+	min-width: 150px;
+	margin: 20px;
+    background: #148093;
+	color:#fff;
+	padding: 10px;
+	text-align: center;
+    outline: solid #148093 3px;
+	border:0px;
+    border-radius: 5px;
+	transition: all .3s ease; 
+}
+section#sub_contenido > div#pantalla_registrar_actividad > div#botones input#enviar_datos:hover,
+section#sub_contenido > div#pantalla_registrar_actividad > div#botones button#btn_cancelar_gestionar_actividades:hover{
+	outline: solid #165A8E 3px;
+	background-color: #165A8E; 
+}
+
+/*
+ * PAra el header de la tabla de resultados de alumnos por actividad
+ */
+tr#fila_header{
+	width: auto;
+	display: block;
+	background: #A3276B;
+	color: #fff;
+	padding: 5px;
+}
+
+tr#fila_header > th{
+	display: inline;
+	/*border: solid #0D9661 1px;*/
+}
+
+tr#fila_header > th#indice{ margin-left: 50px; }
+tr#fila_header > th#columna1{ margin-right: 100px; }
+tr#fila_header > th#columna2{ margin-right: 100px; }
+
+
+/*
+ * Para cada fila de resultado de la tabla alumnos por actividad
+ */
+tr#fila_res{
+	width: 100%;
+	display: block;
+	background: #f0f0f0;
+	margin:0;
+	border-bottom: solid #8D97A8 2px;
+	transition: all 0.2s ease;
+}
+
+tr#fila_res:hover{
+	background: #D3D1D1;
+}
+
+tr#fila_res > td{
+	text-align: center;
+	display: inline;
+}
+
+tr#fila_res > td#columna1{ margin-left: 50px; margin-right: 170px; }
+tr#fila_res > td#columna2{ margin-right: 100px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
