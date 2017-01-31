@@ -1,0 +1,117 @@
+﻿- Producto de Desarrollo Principal. //
+- ////////////////////////////////////
+Aquí se alojará toda la parte del sistema.
+
+/*
+ * En este documento se especifican las convenciones de trabajo y elaboración de código para
+ * asegurar el correcto desempeño del equipo sobre el proyecto teniendo como prioridades la
+ * eficiencia y calidad de desarrollo.
+ * 
+ * Author: JMCL
+ * Date: 07/09/2016
+ * Description: Especificaciones de desarrollo.
+ *
+ */
+
+ #TRABAJO CON TORTOISE
+
+ 	Tortoise es un programa de control de subversiones. Esto quiere decir que es una herramienta para la gestión de proyectos de desarrollo en equipo.
+ 	Una versión es un proyecto central o principal en un servidor o equipo compartido sobre el cuál todos trabajan. Una subversión es una copia personal
+ 	que cada colaborador podrá manipular a su criterio con el fin de que el trabajo se pueda dividir y a la vez centralizar. Para mantener orden y evitar 
+ 	conflictos de subversiones individuales es necesario establecer ciertas normas que garanticen la integridad del proyecto principal (versión).
+
+ 	1.- Antes de comenzar a editar o trabajar, es obligatorio obtener (update) la versión más reciente en la subversión local. Esto es actualizar con el
+ 		botón update a todo el proyecto.
+
+ 	2.- Para editar un archivo es obligatorio bloquearlo antes de abrirlo (submenú TortuiseSVN > Lock). Esto para evitar editar el mismo archivo de un 
+ 		compañero. Tortoise notificará de cualquier tipo de error o conflictos de acuerdo al contexto.
+
+ 	3.- Antes de subir los cambios a la versión (Commit) es obligatorio obtener la más reciente (actualizar con botón update). Una
+ 		vez realizado esto, se deberá presionar el botón Commit para subir los cambios a la versión. Seguido de esto, el archivo se debe desbloquear (unlock)
+ 		para permitir la edición por otros colaboradores. Si la opción no aparece entonces no será necesario. En caso de seguir editando, volver a bloquear.
+
+ 	4.- Para crear un archivo basta con crearlo en el Explorer de Windows y seleccionar la opción Add. Hecho esto, la subversión se deberá subir (Commit) a 
+ 		la versión para que los archivos sean creados en la versión.
+
+ 	5.- Para eliminar un archivo se tendrá que realizar por medio del menú TortoiseSVN > Delete para poder deshacer las acciones. Todas las Subversiones están
+ 		protegidas contra escritura para evitar la corrupción del control de subversiones, así que de ser eliminado un archivo o carpeta, será necesario
+ 		rescatarlo de la Papelera de Reciclaje y volver a generarlo manualmente con las ocpiones de Tortoise.
+
+ 	6.- Para mover un archivo se debe utilizar la opción Switch del menú desplegable TortoiseSVN.
+
+ 	7.- ALGO MUY IMPORTANTE ES QUE PARA REALIZAR CAMBIOS CONSIDERABLEMENTE GRANDES ES ALTAMENTE RECOMENDADO DAR AVISO A LOS INTEGRANTES DEL EQUIPO DE 
+ 		DESARROLLO PARA QUE SE EVALÚE DICHA ACCIÓN APROPIADAMENTE.
+
+ 	!!!!!!!!!!!!!!!!!!!!!!!!!!! QUEDA PROHIBIDO SUBIR ERRORES A LA VERSIÓN !!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ #CONVENCIONES DE CODIFICACION
+
+ 	//ARCHIVOS
+
+ 		* Los archivos de código fuente cuyo contenido es una clase serán denominados de la siguiente manera: cls_CAPA_TipoObjeto.php, donde cls hace alusión 
+ 			a Class, CAPA se substituirá por Mod si es de Models o por Ctrl si es de Controllers. Ej. cls_Mod_Alumnos.php, cls_Ctrl_Alumnos.php.
+
+ 		* Los archivos que tienen una función muy específica como validaciones y que no es una clase será denominado de la siguiente manera: scp_ValidarAlgo
+ 			donde scp es en alusión a Script y el nombre especial está dado en infinitivo de acuerdo a la función. Estos pueden colocarse en la carperta o capa
+ 			que sea necesario. Ej. scp_ValidarDatosInstructor.php
+
+ 		* En el caso de las Views, se utilizará el prefijo:
+ 			- frm_Acción/Función - Si contiene uno o más formularios - Ej. frm_RegistroAlumno.php
+ 			- itz_NombreInterfaz - Para aquellas pantallas que sólo realizan consultas o muestran información específica - Ej. itz_EstadisticasAlumnos.php
+ 		* 
+ 	//CONTENIDO DE CLASES
+ 		* Las variables globales serán nombradas iniciando por la alusión al tipo de dato y lo que representan: strNombrePersona. Los nombres de las variables 
+ 			deben coincidir con la base de datos en lo posible. Puede que se deban crear variables usadas para operaciones, pero es obligatorio nombrarlas
+ 			apropiadamente.
+
+ 		* Toda variable debe tener (obligatoriamente) sus métodos Get & Set, los cuales se acomodarán como se menciona más adelante.
+
+ 		* Las constantes se deben crear o definir dentro del constructor.
+
+ 		* Los constructores pueden tener o no parámetros. Esto depende del criterio del desarrollador.
+
+ 		* Toda clase constará de la siguientes secciones definidas o marcadas por el signo # (sharp) y en letras capitales:
+ 			#VARIABLES GLOBALES
+ 			#CONSTRUCTOR
+ 			#METODOS
+ 			#GETTERS&SETTERS
+
+ 		//#VARIABLES GLOBALES-> Definidas inmediatamente después de la declaración de la clase:
+ 			class cls_Mod_Alumnos{
+ 				var strNombreAlumno;
+ 				var intNoControl;
+ 				...
+ 			}
+ 		//#CONSTRUCTOR-> Puede o no recibir parámetros o invocaciones a métodos en la creación del objeto. Las constantes dentro de ellos es
+ 			con capitales:
+ 			function __construct(){
+ 				define("TABLA", "tablaPrincipal");
+ 			}
+
+ 		//#METODOS -> Deben ser declarados como públicos, deben estar nombrados en infinitivo con el prefijo mtd en alusión  a Method. Cada método
+ 			debe estar documentado con los datos: Author (Iniciales), Date (de inicio ó de término), Description, Parameters, Return. Ej.
+ 			/*
+ 			 * Author: YOPI
+ 			 * Date: 07/09/2016
+ 			 * Description: Este método ayuda a dar un ejemplo base para que todos entendamos cómo va a estar el orden
+ 			 * Parameters: Null (No recibe algo en absoluto)
+ 			 * Return: $strVariableAlgo
+ 			 */
+ 			 public function mtdObtenerActividadesAlumno(){
+ 			 	$strVariableAlgo = getStrActividad();
+ 			 	return $strVariableAlgo;
+ 			 }
+
+ 		//#GETTERS&SETTERS -> Se dejan al final del archivo debido a que no son leídos frecuentemente ya que tanto su nombre como su función están ya
+ 			establecidos y son predecibles. A pesar de ser métodos no es necesario documentarlos. Otro punto importante es que pueden y deberían ser
+ 			escritos en una sólo línea pues son demasiado cortos.
+
+ 			public function getStrNombreAlumno(){ return $this->strNombreAlumno; }
+ 			public function setStrNombreAlumno($strNombreAlumno){ $this->strNombreAlumno = $strNombreAlumno; }
+
+ 			TODAS LAS VARIABLES GLOBALES DEBEN SER ACCEDIDAS USANDO LOS SETTERS Y GETTERS
+
+ 		PARA UNA FÁCIL MANIPULACIÓN DE LAS VARIABLES, ES OBLIGATORIO QUE LAS VARIABLES QUE SE MANDEN Y LLEGUEN COMO PARAMETRO SEAN NOMBRADAS IGUAL,
+ 		TANTO EN ENVÍO COMO EN RECEPCIÓN.
+
+
