@@ -1,6 +1,7 @@
 <?php
     $root = realpath($_SERVER["DOCUMENT_ROOT"]);
-    require_once "$root/SGAC_v1.0/trunk/models/MySQL/MySQL.php";
+    require_once "187.217.117.12/MySQL.php"
+    //require_once "$root/SGAC_v1.0/trunk/models/MySQL/MySQL.php";
     
     class cls_Mod_General {
         #VARIABLES GLOBALES
