@@ -2,7 +2,7 @@
   $root = realpath($_SERVER["DOCUMENT_ROOT"]);
   //require_once "$root/SGAC_v1.0/trunk/models/MySQL/MySQL.php";
 	//$MySQL= fopen("http://www.complementarias.itszongolica.edu.mx/MySQL.php")
-	include_once"http://www.complementarias.itszongolica.edu.mx/MySQL.php";
+	include_once"https://www.complementarias.itszongolica.edu.mx/MySQL.php";
   require_once"$root/SGAC_v1.0/trunk/models/General/cls_Mod_General.php";
   
   class cls_Mod_Actividad extends cls_Mod_General{
