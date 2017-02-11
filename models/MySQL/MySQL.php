@@ -10,7 +10,7 @@
 		# CONSTRUCTOR::CONFIGURACIONES
 		public function __construct(){			
 			define("SERVER", "localhost");
-			define("DATABASE", "sgac_2");
+			define("DATABASE", "sgac");
 			define("USER", "root");
 			define("PASSWORD", ""); 
 		}

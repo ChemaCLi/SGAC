@@ -3,13 +3,13 @@ $(document).ready(function(){
 });//END FUNCTION
 
 function inicio (){
-    $("#contenido").load("view/Alumnos/itz_inicio_alumno");
+    $("#contenido").load("view/Alumnos/itz_inicio_alumno.php");
 }//END FUNCTION
 
 $(inicio).ajaxStop(function(){
     $("#btn_inicio").click(function(){
         crear_loading_subcontenido();
-        $("#contenido").load("view/Alumnos/itz_inicio_alumno");
+        $("#contenido").load("view/Alumnos/itz_inicio_alumno.php");
     });
     $(".contenedor").click(function(){
         tipo_consulta = "";
@@ -19,7 +19,7 @@ $(inicio).ajaxStop(function(){
         switch($(".contenedor").attr("id")){
             case "btn_salir":
                 tipo_consulta = "logout";
-                url = "view/Alumnos/scp_validaciones";
+                url = "view/Alumnos/scp_validaciones.php";
                 objParametros = {'tipo_consulta': tipo_consulta };
             break;//END CASE
         }//END SWITCH
@@ -36,7 +36,7 @@ $(inicio).ajaxStop(function(){
     
     $("#btn_actividades_disponibles").click(function(){
         crear_loading_subcontenido();
-        $("#sub_contenido").load("view/Alumnos/itz_actividades_disponibles");
+        $("#sub_contenido").load("view/Alumnos/itz_actividades_disponibles.php");
     });//END FUNCTION
 });//END AJAX STOP
 

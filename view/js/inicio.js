@@ -3,26 +3,31 @@ $(document).ready(function(){
 });
 
 function inicio(){
-  $("#contenido").load("bienvenida");  
+    crear_loading_contenido();
+  $("#contenido").load("bienvenida.php");  
 }
 
 $(inicio).ajaxStop(function(){
     // carga el login de administrador
     $("#opcion1").click(function(){
         console.log("hola");
-        $("#contenido").load("admin_login");
+        crear_loading_contenido();
+        $("#contenido").load("admin_login.php");
     });//END FUNCTION
     // carga login de alumnos
     $("#opcion2").click(function(){
-        $("#contenido").load("alumnos_login");
+        crear_loading_contenido();
+        $("#contenido").load("alumnos_login.php");
     });//END FUNCTION
-    // carga login de alumnos
+    // carga login de instructores
     $("#opcion3").click(function(){
-        $("#contenido").load("instructores_login");
+        crear_loading_contenido();
+        $("#contenido").load("instructores_login.php");
     });//END FUNCTION
     // para los botones de cancelar login
     $("#btn_cancelar_login").click(function(){
-        $("#contenido").load("bienvenida");
+        crear_loading_contenido();
+        $("#contenido").load("bienvenida.php");
     });//END FUNCTION
     
     /*
@@ -45,7 +50,7 @@ $(inicio).ajaxStop(function(){
             case "alumno":
                 div_id_boton = '<input type="submit" value="Ingresar" class="boton" id="btn_login" name="alumno">';
                 
-                url = "view/Alumnos/scp_validaciones"; 
+                url = "view/Alumnos/scp_validaciones.php"; 
                 usuario = $("#usuario").val();
                 clave = $("#clave").val(); 
                 objParametros = {
@@ -58,7 +63,7 @@ $(inicio).ajaxStop(function(){
             case "admin":
                 div_id_boton = '<input type="submit" value="Ingresar" class="boton" id="btn_login" name="admin">';
                 
-                url = "view/Administradores/scp_validaciones"; 
+                url = "view/Administradores/scp_validaciones.php"; 
                 usuario = $("#usuario").val();
                 clave = $("#clave").val(); 
                 objParametros = {
@@ -113,6 +118,6 @@ function cancelar(){
         }
     };
     
-    conexion.open("GET", "bienvenida", true);
+    conexion.open("GET", "bienvenida.php", true);
     conexion.send();
 }//END FUNCTION

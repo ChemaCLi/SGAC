@@ -9,7 +9,7 @@
         case "logout":
             session_start();
             session_destroy();
-            echo '<script>window.location="index"</script>';
+            echo '<script>window.location="index.php"</script>';
             break;//END CASE
         case "login":
             $strCURP = "";

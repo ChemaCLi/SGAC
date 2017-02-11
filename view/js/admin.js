@@ -10,7 +10,7 @@ $(document).ready(function(){
  * Carga pagina con la pantalla inicial de opciones de administrador
  */
 function inicio (){
-    $("#contenido").load("view/Administradores/inicio_administrador");
+    $("#contenido").load("view/Administradores/inicio_administrador.php");
 }//END FUNCTION
 
 /*
@@ -21,29 +21,29 @@ $(inicio).ajaxStop(function(){
     $("#btn_inicio").click(function(){
         crear_loading_contenido();
         //$("#contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/inicio_administrador");
+        $("#contenido").load("view/Administradores/inicio_administrador.php");
     });//END FUNCTION
     $("#btn_reportes").click(function(){
         crear_loading_contenido();
         //$("#contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/inicio_administrador");
+        $("#contenido").load("view/Administradores/inicio_administrador.php");
     });//END FUNCTION
     $("#btn_comunicado").click(function(){
         crear_loading_contenido();
         //$("#contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/inicio_administrador");
+        $("#contenido").load("view/Administradores/inicio_administrador.php");
     });//END FUNCTION
     $("#btn_ayuda").click(function(){
         crear_loading_contenido();
         //$("#contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/inicio_administrador");
+        $("#contenido").load("view/Administradores/inicio_administrador.php");
     });//END FUNCTION
     $("#btn_salir").click(function(){
         crear_loading_contenido();
         objParametros = {tipo_consulta: 'logout'};
         $.ajax({
             type: 'POST',
-            url: 'view/Administradores/scp_validaciones',
+            url: 'view/Administradores/scp_validaciones.php',
             data: objParametros,
             success: function(respuesta){
                 $('body').html(respuesta);
@@ -57,34 +57,34 @@ $(inicio).ajaxStop(function(){
     $("#gestionar_actividades").click(function(){
         crear_loading_contenido();
         //$("#contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/itz_gestionar_actividades");
+        $("#contenido").load("view/Administradores/itz_gestionar_actividades.php");
     });//END FUNCTION
     $("#gestionar_alumnos").click(function(){
         crear_loading_contenido();
         //$("#contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/itz_gestionar_alumnos");
+        $("#contenido").load("view/Administradores/itz_gestionar_alumnos.php");
     });//END FUNCTION
     $("#gestionar_instructores").click(function(){
         crear_loading_contenido();
         //$("#contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/itz_gestionar_instructores");
+        $("#contenido").load("view/Administradores/itz_gestionar_instructores.php");
     });//END FUNCTION
     
     //Botones de la barra lateral
     $("#menulateral1").click(function(){
         crear_loading_contenido();
         //$("#contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/itz_gestionar_actividades");
+        $("#contenido").load("view/Administradores/itz_gestionar_actividades.php");
     });//END FUNCTION
     $("#menulateral2").click(function(){
         crear_loading_subcontenido();
         //$("#sub_contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/itz_gestionar_alumnos");
+        $("#contenido").load("view/Administradores/itz_gestionar_alumnos.php");
     });//END FUNCTION
     $("#menulateral3").click(function(){
         crear_loading_subcontenido();
         //$("#sub_contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/itz_gestionar_instructores");
+        $("#contenido").load("view/Administradores/itz_gestionar_instructores.php");
     });//END FUNCTION
     
     /*
@@ -93,7 +93,7 @@ $(inicio).ajaxStop(function(){
     $("#btn_nueva_actividad").click(function(){
         crear_loading_subcontenido();
         //$("#sub_contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/itz_registrar_actividad");
+        $("#contenido").load("view/Administradores/itz_registrar_actividad.php");
     });//END FUNCTION
     
     /*
@@ -101,7 +101,7 @@ $(inicio).ajaxStop(function(){
      */
     $("#btn_nuevo_lugar").click(function(){
         crear_loading_subcontenido();
-        $("#contenido").load("view/Administradores/itz_registrar_lugar");
+        $("#contenido").load("view/Administradores/itz_registrar_lugar.php");
     });//END FUNCTION
     
     /*
@@ -110,7 +110,7 @@ $(inicio).ajaxStop(function(){
     $("#btn_gestionar_lugares").click(function(){
         crear_loading_subcontenido();
         //$("#sub_contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/itz_gestionar_lugares");
+        $("#contenido").load("view/Administradores/itz_gestionar_lugares.php");
     });//END FUNCTION
     
     /*
@@ -119,7 +119,7 @@ $(inicio).ajaxStop(function(){
     $("#btn_actividades_inactivas").click(function(){
         crear_loading_subcontenido();
         //$("#sub_contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/itz_actividades_inactivas");
+        $("#contenido").load("view/Administradores/itz_actividades_inactivas.php");
     });//END FUNCTION
     
     /*
@@ -127,7 +127,7 @@ $(inicio).ajaxStop(function(){
      */
     $("#btn_actividades_activas").click(function(){
         crear_loading_subcontenido();
-        $("#contenido").load("view/Administradores/itz_gestionar_actividades");
+        $("#contenido").load("view/Administradores/itz_gestionar_actividades.php");
     });//END FUNCTION
     
     /*
@@ -237,7 +237,7 @@ $(inicio).ajaxStop(function(){
 
                 actividad = s_id_actividad;
                 tipo_consulta = "modificar_actividad";
-                url = "view/Administradores/scp_validaciones";
+                url = "view/Administradores/scp_validaciones.php";
                 objParametros = {
                     'tipo_consulta' : tipo_consulta,
                     'id' : actividad,
@@ -257,7 +257,7 @@ $(inicio).ajaxStop(function(){
                 //categoria = $("#categoria_actividad");
                 
                 tipo_consulta = "registrar_actividad";
-                url = "view/Administradores/scp_validaciones";
+                url = "view/Administradores/scp_validaciones.php";
                 objParametros = {
                     'tipo_consulta' : tipo_consulta,
                     'nombre_actividad' : $("#nombre_actividad").val(),
@@ -273,7 +273,7 @@ $(inicio).ajaxStop(function(){
             break;//END CASE
         case "registrar_lugar":
             tipo_consulta = "registrar_lugar";
-            url = "view/Administradores/scp_validaciones";
+            url = "view/Administradores/scp_validaciones.php";
             objParametros = {
                     'tipo_consulta' : tipo_consulta,
                     'nombre' : $("#nombre").val(),
@@ -298,12 +298,12 @@ $(inicio).ajaxStop(function(){
     $("button#btn_aceptar_gestionar_actividades").click(function(){
         crear_loading_subcontenido();
         //$("#sub_contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/itz_gestionar_actividades");
+        $("#contenido").load("view/Administradores/itz_gestionar_actividades.php");
     });//END FUNCTION
     $("button#btn_cancelar_gestionar_actividades").click(function(){
         crear_loading_subcontenido();
         //$("#sub_contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/itz_gestionar_actividades");
+        $("#contenido").load("view/Administradores/itz_gestionar_actividades.php");
     });//END FUNCTION
     
     //PARA LOS BOTONES DE LA CAJA MODAL VEX
@@ -337,7 +337,7 @@ function desactivar_actividad(actividad){
     //$("#sub_contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
     $.ajax({
         type: 'POST',
-        url: 'view/Administradores/scp_validaciones',
+        url: 'view/Administradores/scp_validaciones.php',
         data: objParametros,//Obtenida de la que está a nivel de función
         success: function(respuesta){//Respuesta es lo que pone PHP en pantalla, prácticamente es traer al PHP si la consulta fue successfuly
             $("#sub_contenido").html(respuesta);
@@ -371,7 +371,7 @@ function activar_actividad(actividad){
     //$("#sub_contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
     $.ajax({
         type: 'POST',
-        url: 'view/Administradores/scp_validaciones',
+        url: 'view/Administradores/scp_validaciones.php',
         data: objParametros,//Obtenida de la que está a nivel de función
         success: function(respuesta){//Respuesta es lo que pone PHP en pantalla, prácticamente es traer al PHP si la consulta fue successfuly
             $("#sub_contenido").html(respuesta);
@@ -405,7 +405,7 @@ function gestion_actividades(objetoDOM){
     //Dependiedo del botón pulsado será el tipo de consulta 
     switch(boton){
         case "btn_detalles_actividad":{//Si es el de detalles
-            url =  'view/Administradores/itz_detalles_actividad';
+            url =  'view/Administradores/itz_detalles_actividad.php';
             tipo_consulta = "detalles_actividad";
             objParametros = {
                 'actividad' : actividad,//Ya fue declarada y asignadaanteriormente
@@ -414,7 +414,7 @@ function gestion_actividades(objetoDOM){
             break;
         }//END CASE
         case "btn_alumnos_inscritos":{
-        	url =  'view/Administradores/itz_alumnos_inscritos_actividad';
+        	url =  'view/Administradores/itz_alumnos_inscritos_actividad.php';
             tipo_consulta = "alumnos_actividad";
             objParametros = {
                 'actividad' : actividad,
@@ -423,7 +423,7 @@ function gestion_actividades(objetoDOM){
             break;
         }//END CASE
         case "btn_modificar_actividad":{
-            url =  "view/Administradores/itz_modificar_actividad";
+            url =  "view/Administradores/itz_modificar_actividad.php";
             tipo_consulta = "modificar_actividad";
             objParametros = {
                 'actividad' : actividad,
@@ -432,7 +432,7 @@ function gestion_actividades(objetoDOM){
             break;
         }//END CASE
         case "btn_confirmar_eliminar":{
-            url = "view/Administradores/itz_eliminar_actividad";
+            url = "view/Administradores/itz_eliminar_actividad.php";
             tipo_consulta = "eliminar_actividad";
             objParametros = {
                 'actividad' : actividad,
