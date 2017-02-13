@@ -14,13 +14,14 @@ session_start();
 		<link rel="stylesheet" type="text/css" href="view/css/bienvenida.css"/>
 		<link rel="stylesheet" type="text/css" href="view/css/log.css">
 		<link rel="stylesheet" type="text/css" href="view/css/modal_systech.css"/>
+		<link rel="stylesheet" type="text/css" href="view/css/animate.css"/>
 		<script type="text/javascript" src="view/js/jquery/jquery.js"></script>
 		<script type="text/javascript" src="view/js/inicio.js"></script>
 		<script type="text/javascript" src="view/js/modal_systech.js"></script>
 	</head>
 	<body>
-		<header class="encabezado">
-			<div id="titulo-bar">
+		<header class="encabezado animated fadeInDown">
+			<div id="titulo-bar"  class="animated fadeInDown">
 				<h2>Actividades Complementarias Online :: v. ALPHA</h2>
 				<h4>Un servicio del Instituto Tecnológico Superior de Zongolica</h4>
 			</div>
@@ -60,6 +61,9 @@ session_start();
 			break;//END CASE
 			case "ADMINISTRADOR":
 				echo '<script>window.location="admin"</script>';
+			break;//END CASE
+			case "INSTRUCTOR":
+				echo '<script>window.location="instructores"</script>';
 			break;//END CASE
 		}//END SWITCH
 	}
