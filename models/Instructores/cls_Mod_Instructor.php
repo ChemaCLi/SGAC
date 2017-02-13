@@ -40,5 +40,19 @@
             return $this->objResult;
             $this->objResult = null;
         }
+        
+        public function  mtdValidarInstructor($strCURP, $intNIP){
+            $strSQL = "SELECT * FROM ".TABLA_INSTRUCTORES." WHERE strCURP = '{$strCURP}' AND intNIP = '{$intNIP}'";
+			$this->objResult = $this->objMySQL->mtdConsultaGenerica($strSQL);
+			return $this->objResult;
+			$this->objResult = null;
+        }
+		
+		public function mtdSolicitarAltaInstructor($strCURP, $strNombre, $strApPaterno, $strApMaterno, $chrGenero, $dtmFechaNacimiento, $strDireccion, $strTelefono, $strEmail, $strNombreActividad){
+            $strSQL = "INSERT INTO instructores_aspirantes(strCURP, strNombre, strApPaterno, strApMaterno, chrGenero, dtmFechaNacimiento, strDireccion, strTelefono, strEmail, strNombreActividad) values ('{$strCURP}', '{$strNombre}', '{$strApPaterno}', '{$strApMaterno}', '{$chrGenero}', '{$dtmFechaNacimiento}', '{$strDireccion}', '{$strTelefono}', '{$strEmail}', '{$strNombreActividad}');";
+			$this->objResult = $this->objMySQL->mtdConsultaGenerica($strSQL);
+			return $this->objResult;
+			$this->objResult = null;
+        }
     } 
     ?>
