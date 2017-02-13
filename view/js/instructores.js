@@ -1,203 +1,61 @@
-/*
- * Cuando se cargue la pagina inicial
- */
-
 $(document).ready(function(){
     inicio();
 });//END FUNCTION
 
-/*
- * Carga pagina con la pantalla inicial de opciones de administrador
- */
 function inicio (){
-    $("#contenido").load("view/Administradores/inicio_Instructor");
+	crear_loading_contenido();
+    $("#contenido").load("view/Instructores/itz_inicio_instructor.php");
 }//END FUNCTION
 
-/*
- * Después de que la pantalla anterior sea añadida al DOM, se crean las funciones click de los elementos del DOM actualizado
- */
 $(inicio).ajaxStop(function(){
     //Botones navbar
     $("#btn_inicio").click(function(){
-        $("#contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/inicio_administrador");
-    });//END FUNCTION
-    $("#btn_reportes").click(function(){
-        $("#contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/inicio_administrador");
-    });//END FUNCTION
-    $("#btn_comunicado").click(function(){
-        $("#contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/inicio_administrador");
-    });//END FUNCTION
-    $("#btn_ayuda").click(function(){
-        $("#contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/inicio_administrador");
-    });//END FUNCTION
-    $("#btn_salir").click(function(){
-        $("#contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>MEDIDA DE ESTABILIZACIÓN DEL SISTEMA. <br><br>El proceso de sesiones aún no está listo,<br>por favor recargue la página para detener esta pausa...</figurecaption></figure></center>");
-        $(document).load("../");
+        crear_loading_subcontenido();
+        $("#contenido").load("view/Alumnos/itz_inicio_alumno.php");
+    });
+    $(".contenedor").click(function(){
+        tipo_consulta = "";
+        url = "";
+        objParametros = {};
+        
+        switch($(".contenedor").attr("id")){
+            case "btn_salir":
+                tipo_consulta = "logout";
+                url = "view/Alumnos/scp_validaciones.php";
+                objParametros = {'tipo_consulta': tipo_consulta };
+            break;//END CASE
+        }//END SWITCH
+        crear_loading_contenido();
+        $.ajax({
+                type: 'POST',
+                url: url,
+                data: objParametros,
+                success: function(respuesta){
+                    $('body').html(respuesta);
+                }//END SUCCESS
+            });//END AJAX
     });//END FUNCTION
     
     //Botones de página inicial
     $("#gestionar_actividades").click(function(){
         $("#contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/itz_gestionar_actividades");
     });//END FUNCTION
     $("#gestionar_alumnos").click(function(){
         $("#contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/itz_Gestionar_Alumnos");
     });//END FUNCTION
     $("#gestionar_instructores").click(function(){
         $("#contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/itz_Gestionar_Instructores");
     });//END FUNCTION
     
     //Botones de la barra lateral
     $("#menulateral1").click(function(){
         $("#contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/itz_gestionar_actividades");
     });//END FUNCTION
     $("#menulateral2").click(function(){
         $("#sub_contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/itz_gestionar_alumnos");
     });//END FUNCTION
     $("#menulateral3").click(function(){
         $("#sub_contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/itz_gestionar_instructores");
-    });//END FUNCTION
-    
-    /*
-     * Para la pantalla de modificar, el botón de enviar
-     */
-    
-    $("#btn_mandar_datos").click(function(){
-        switch($("#btn_mandar_datos").val()){
-            case "Modificar":{
-                 //EL ID de la actividad complementaria a modificar. No es tocada por el usuario
-                s_id_actividad = $("#frm_modificar_actividad #s_id_actividad").val();
-
-                ///Datos originales tomados de la base de datos y recuperados de un input hidden
-                s_nombre_actividad = $("#frm_modificar_actividad #s_nombre_actividad").val();
-                s_categoria_actividad = $("#frm_modificar_actividad #s_categoria_actividad").val();
-                s_descripcion_actividad = $("#frm_modificar_actividad #s_descripcion_actividad").val();
-                s_horas_actividad = $("#frm_modificar_actividad #s_horas_actividad").val();
-                s_creditos_actividad = $("#frm_modificar_actividad #s_creditos_actividad").val();
-                s_disponibilidad_actividad = $("#frm_modificar_actividad #s_bandera_disponibilidad_actividad").val();
-                s_status = $("#frm_modificar_actividad #s_bandera_activa_actividad").val();
-                s_cupo_actividad = $("#frm_modificar_actividad #s_cupo_actividad").val();
-                s_campus_actividad = $("#frm_modificar_actividad #s_campus_actividad").val();
-
-                ///Nuevos valores introducidos por el usuario
-                nombre_actividad = $("#nombre_actividad").val();
-                categoria_actividad = $("#categoria_actividad").val();
-                descripcion_actividad = $("#descripcion_actividad").val();
-                total_horas_actividad = $("#total_horas_actividad").val();
-                creditos_actividad = $("#creditos_actividad").val();
-                disponibilidad = $("#disponibilidad").val();
-                status = $("#status").val();
-                cupo_actividad = $("#cupo_actividad").val();
-                campus_actividad = $("#campus_actividad").val();
-
-                ///Variables que se mandarán al servidor
-                d_nombre_actividad = "";
-                d_categoria_actividad = "";
-                d_descripcion_actividad = "";
-                d_total_horas_actividad = "";
-                d_creditos_actividad = "";
-                d_disponibilidad = "";
-                d_status = "";
-                d_cupo_actividad = "";
-                d_campus_actividad = "";
-
-
-                if((nombre_actividad === "" )||(nombre_actividad === null))
-                    d_nombre_actividad = s_nombre_actividad;
-                else
-                    d_nombre_actividad = nombre_actividad;
-
-                if((categoria_actividad === "") || (categoria_actividad === null))
-                    d_categoria_actividad = s_categoria_actividad;
-                else
-                    d_categoria_actividad = categoria_actividad;
-
-                if((descripcion_actividad === "") || (descripcion_actividad === null))
-                    d_descripcion_actividad = s_descripcion_actividad;
-                else
-                    d_descripcion_actividad = descripcion_actividad;
-
-                if((total_horas_actividad === "") || (total_horas_actividad === null))
-                    d_total_horas_actividad = s_horas_actividad;
-                else
-                    d_total_horas_actividad = total_horas_actividad;
-
-                if((creditos_actividad === "") || (creditos_actividad === null))
-                    d_creditos_actividad = s_creditos_actividad;
-                else
-                    d_creditos_actividad = creditos_actividad;
-
-                if((disponibilidad === "") || (disponibilidad === null))
-                    d_disponibilidad = s_disponibilidad_actividad;
-                else
-                    d_disponibilidad = disponibilidad;
-
-                if((status === "") || (status === null))
-                    d_status = s_status;
-                else
-                    d_status = status;
-
-                if((cupo_actividad === "") || (cupo_actividad === null))
-                    d_cupo_actividad = s_cupo_actividad;
-                else
-                    d_cupo_actividad = cupo_actividad;
-
-                if((campus_actividad === "") || (campus_actividad === null))
-                    d_campus_actividad = s_campus_actividad;
-                else
-                    d_campus_actividad = campus_actividad;
-
-                    console.log(
-                        d_nombre_actividad + " - " +
-                        d_categoria_actividad + " - " +
-                        d_descripcion_actividad + " - " +
-                        d_total_horas_actividad + " - " +
-                        d_creditos_actividad + " - " +
-                        d_disponibilidad + " - " +
-                        d_status + " - " +
-                        d_cupo_actividad + " - " +
-                        d_campus_actividad                       
-                    );
-
-                actividad = s_id_actividad;
-                tipo_consulta = "modificar_actividad";
-                url = "view/Administradores/scp_Validaciones";
-                objParametros = {
-                    'tipo_consulta' : tipo_consulta,
-                    'id' : actividad,
-                    'nombre_actividad' : d_nombre_actividad,
-                    'categoria' : d_categoria_actividad,
-                    'descripcion' : d_descripcion_actividad,
-                    'horas' : d_total_horas_actividad,
-                    'creditos' : d_creditos_actividad,
-                    'disponibilidad' : d_disponibilidad,
-                    'status' : d_status,
-                    'cupo' : d_cupo_actividad,
-                    'id_campus' : d_campus_actividad
-                };
-
-                $("#sub_contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-
-                $.ajax({
-                    type: 'POST',
-                    url: url,
-                    data: objParametros,
-                    success: function(respuesta){//Respuesta es lo que pone PHP en pantalla, prácticamente es traer al PHP si la consulta fue successfuly
-                        $("#sub_contenido").html(respuesta);
-                    }//END SUCCESS
-                });//END AJAX
-                break;
-            }//END CASE   
-        }//END SWITCH
     });//END FUNCTION
     
     //BOTONES GENERALES ACEPTAR-CANCELAR
