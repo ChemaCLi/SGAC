@@ -1,22 +1,17 @@
 <div id="navbar">
-		<div class="contenedor1">
-			<img class="icon" src="view/img/icons/home3.png">
-			<p class="text">Inicio</p>
-		</div>
-		<div  class="contenedor">
-			<img class="icon" src="view/img/icons/switch.png">
-			<p class="text">Salir</p>
-        </div>
-		<div  class="contenedor">
-			<img class="icon" src="view/img/icons/question.png">
-			<p class="text">Ayuda</p>
-		</div>
-		<div  class="contenedor" id="btn_comunicado">
-			<img class="icon" src="view/img/icons/bull.png">
-			<p class="text">Emitir Comuncado</p>
-		</div>
-		<div  class="contenedor">
-			<img class="icon" src="view/img/icons/mail4.png">
-			<p class="text">Enviar Correo</p>
-		</div>
+	<div class="contenedor1" id="btn_inicio" title="Inicio">
+		<img class="icon" src="view/img/icons/home3.png">
 	</div>
+	<div  class="contenedor" id="btn_salir" title="Salir">
+		<img class="icon" src="view/img/icons/switch.png">
+	</div>
+	<div  class="contenedor" id="btn_ayuda" title="Ayuda">
+		<img class="icon" src="view/img/icons/question.png">
+	</div>
+	<div  class="contenedor" id="btn_comunicado" title="Avisos">
+		<img class="icon" src="view/img/icons/bull.png">
+	</div>
+	<div  class="contenedor" id="btn_reportes" title="Generar Reportes">
+		<img class="icon" src="view/img/icons/file-pdf.png">
+	</div>
+</div>
