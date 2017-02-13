@@ -18,19 +18,19 @@
 		</p>
 	</article>
 	<div class="contenedor-opciones">
-		<div class="opcion" >
+		<div class="opcion  animated flipInY" >
 			<a >
 				<img id="opcion1" src="view/img/icons/books.png"/>
 			</a>
 			<h4>ADMINISTRADOR</h4>
 		</div>
 		<div class="opcion">
-			<a >
+			<a class="animated flip">
 				<img id="opcion2" src="view/img/icons/mortarboard.png"/>
 			</a>
 			<h4>ALUMNO</h4>
 		</div>
-		<div class="opcion">
+		<div class="opcion  animated flipInY">
 			<a >
 				<img id="opcion3" src="view/img/icons/whistle.png"/>
 			</a>
