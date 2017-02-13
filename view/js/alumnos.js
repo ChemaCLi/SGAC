@@ -3,8 +3,19 @@ $(document).ready(function(){
 });//END FUNCTION
 
 function inicio (){
+<<<<<<< .mine
+<<<<<<< .mine
     crear_loading_contenido();
+||||||| .r36
+=======
+    crear_loading_contenido();
+>>>>>>> .r37
     $("#contenido").load("view/Alumnos/itz_inicio_alumno.php");
+||||||| .r6
+    $("#contenido").load("view/Alumnos/itz_inicio_alumno");
+=======
+    $("#contenido").load("view/Alumnos/itz_inicio_alumno.php");
+>>>>>>> .r36
 }//END FUNCTION
 
 $(inicio).ajaxStop(function(){
