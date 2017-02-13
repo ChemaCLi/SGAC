@@ -163,5 +163,17 @@
         return $this->objResult;
         $this->objResult = null;
       }
+      
+      public function mtdObtenerActividadesDisponibles($strNoControl){
+        //$strSQL = "SELECT actividades.strNombreActividad FROM actividades, alumnos_actividades, alumnos WHERE alumnos_actividades._strIdAlumno = '{$strNoControl}' and alumnos_actividades.intBanderaInscrito = 0 and alumnos_actividades.intBanderaAcredita = 0 and alumnos_actividades._intIdActividad = actividades.intId GROUP BY actividades.intId";
+        $strSQL = "SELECT actividades.strNombreActividad FROM actividades, alumnos_actividades WHERE actividades.intId != alumnos_actividades._intIdActividad;";
+        $this->objResult =$this->objMySQL->mtdConsultaGenerica($strSQL);
+        if($this->objResult > 0)
+          return $this->objResult; //hay datos
+        elseif($this->objResult < 1)
+          return 0; //no hay datos
+        else
+          return false;//error inesperado
+     }
 }
 ?>
