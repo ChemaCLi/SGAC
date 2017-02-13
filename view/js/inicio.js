@@ -36,6 +36,9 @@ $(inicio).ajaxStop(function(){
     $("#usuario").keyup(function(){
         this.value = this.value.toUpperCase();
     });
+    $(".capitals").keyup(function(){
+        this.value = this.value.toUpperCase();
+    });
     /*
      * Para el botón de ingresar del login
      */
@@ -73,6 +76,23 @@ $(inicio).ajaxStop(function(){
                 };
                 console.log("Ya entramos al case admin");
             break;//END CASE
+            case "instructor":
+                div_id_boton = '<input type="submit" value="Ingresar" class="boton" id="btn_login" name="instructor">';
+                
+                url = "view/Instructores/scp_validaciones.php";
+                usuario = $("#usuario").val();
+                clave = $("#clave").val();
+                objParametros = {
+                    'tipo_consulta' : tipo_consulta,
+                    'usuario' : usuario,
+                    'clave' : clave
+                };
+                console.log("Ya entramos al case de instructor");
+                break;//END CASE
+            default:
+                $("#mensaje").html("<script>window.location='index'</script>");
+                console.log("DEFAULT");
+            break;
         }//END SIWTCH
         crear_loading_boton();
         $("#cancelar").html("");
@@ -102,7 +122,60 @@ $(inicio).ajaxStop(function(){
                 }//END SUCCESS
             });//END AJAX
     });//END FUNCTION
+    
+    $("#link_postularse_instructor").click(function(){
+        $("#contenido").load("frm_solicitud_instructor.php");
+    });//END FUNCTION
+    
+    $("#btn_aceptar").click(function(){
+        $("#contenido").load("bienvenida.php");
+    });
 });//END AJAX STOP
+
+function solicitud_alta_instructor(){
+    url = "view/Instructores/scp_validaciones.php";
+    tipo_consulta = "solicitud_alta_instructor";
+    objParametros = {};
+
+    curp = $("#curp").val();
+    nombre = $("#nombre").val();
+    apellido_paterno = $("#apellido_paterno").val();
+    apellido_materno = $("#apellido_materno").val();
+    genero = $("#genero").val();
+    fecha_nacimiento = $("#fecha_nacimiento").val();
+    direccion = $("#direccion").val();
+    telefono =$("#telefono").val();
+    actividad = $("#actividad").val();
+    
+    objParametros = {
+        'tipo_consulta' : tipo_consulta,
+        'curp' : curp,
+        'nombre' : nombre,
+        'apellido_paterno' : apellido_paterno,
+        'apellido_mateno' : apellido_materno,
+        'genero' : genero,
+        'fecha_nacimiento' : fecha_nacimiento,
+        'direccion' : direccion,
+        'telefono' : telefono,
+        'actividad' : actividad
+    };
+    crear_loading_contenido();
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: objParametros,
+        success: function(respuesta){
+            //$("#contenido").slideUp();
+            $("#contenido").html(respuesta);
+            subir_mensaje_servidor();
+        }//END SUCCESS
+    });//END AJAX
+}//END AJAX
+
+function subir_mensaje_servidor(){
+    $("html, body").animate({scrollTop: 0}, "slow");
+    return false;
+}//END FUNCTION
 
 function cancelar(){
     var conexion;
