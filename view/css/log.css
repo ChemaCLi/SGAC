@@ -11,12 +11,73 @@
     box-shadow: 5px 10px  5px 2px rgba(150, 150, 150, .8);
 }
 
+#formulario_solicitud_instructor{
+	margin:  50px auto;
+    padding: 50px;
+	width: 500px;
+	min-height: 400px;
+	background:rgba(140,40,135,.99); 
+	overflow: hidden;
+	border-radius: 5px;
+    text-align: center;
+    box-shadow: 5px 10px  5px 2px rgba(150, 150, 150, .8);
+}
+
+#formulario_solicitud_instructor > input[type = "text"],
+#formulario_solicitud_instructor > input[type = "date"],
+#formulario_solicitud_instructor > select{
+	width: 80%;
+	height: 30px;
+    margin: 10px auto;
+    padding: 5px;
+	font-size: 18px;
+	outline: 0px;
+	border:0px;
+	background-color: #fff;
+	border-radius: 5px;
+    text-align: center;
+}
+
+#formulario_solicitud_instructor > input[type = "text"]:focus,
+#formulario_solicitud_instructor > input[type = "date"]:focus,
+#formulario_solicitud_instructor > select:focus{
+	border-bottom: 3px solid #A3004C;
+}
+
+#formulario_solicitud_instructor > input[type = "submit"],
+#formulario_solicitud_instructor > input[type = "button"]{
+	margin: 25px auto;
+    min-width: 200px;
+	/*background: #31384A;*/
+    background: #5A095E;
+	color:#fff;
+	padding: 10px;
+    outline: 0px;
+	border:0px;
+    border-radius: 5px;
+}
+
+#formulario_solicitud_instructor > input[type = "submit"]:focus,
+#formulario_solicitud_instructor > input[type = "button"]:focus
+{
+   background-color: #3A073D;
+   color: #ffffff;
+}
+
+#formulario_solicitud_instructor > input[type = "submit"]:hover,
+#formulario_solicitud_instructor > input[type = "button"]:hover
+{
+   background-color: #3A073D;
+   color: #ffffff;
+   cursor: pointer;
+}
+
 #titulo{
 	text-align: center;
 	margin-top: 20px;
 }
 
-#formulario #subtitulo{
+#subtitulo{
     margin-top: 20px;
 	color: #fff;
 }
