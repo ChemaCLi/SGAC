@@ -28,6 +28,7 @@ $(inicio).ajaxStop(function(){
     $("#btn_cancelar_login").click(function(){
         crear_loading_contenido();
         $("#contenido").load("bienvenida.php");
+        subir_pagina();
     });//END FUNCTION
     
     /*
@@ -167,12 +168,12 @@ function solicitud_alta_instructor(){
         success: function(respuesta){
             //$("#contenido").slideUp();
             $("#contenido").html(respuesta);
-            subir_mensaje_servidor();
+            subir_pagina();
         }//END SUCCESS
     });//END AJAX
 }//END AJAX
 
-function subir_mensaje_servidor(){
+function subir_pagina(){
     $("html, body").animate({scrollTop: 0}, "slow");
     return false;
 }//END FUNCTION
