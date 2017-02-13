@@ -3,6 +3,7 @@ $(document).ready(function(){
 });//END FUNCTION
 
 function inicio (){
+    crear_loading_contenido();
     $("#contenido").load("view/Alumnos/itz_inicio_alumno.php");
 }//END FUNCTION
 
