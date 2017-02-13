@@ -160,6 +160,14 @@
       $this->objResult = null;
     }
     
+     public function mtdObtenerActividadesLiberadas($strNoControl){
+      $this->objResult = $this->objModel->mtdObtenerActividadesLiberadas($strNoControl);
+      return $this->objResult;
+      $this->objResult = null;
+     }
+     
+
+
     #GETTERS&SETTER     
     
     public function getStrNoControl(){ return $this->strNoControl; }

@@ -225,6 +225,12 @@
          return $this->objResult;
          $this->objResult = null;
        }
+       
+      public function mtdObtenerActividadesDisponibles($strNoControl){
+      $this->objResult = $this->objModel->mtdObtenerActividadesDisponibles($strNoControl);
+      return $this->objResult;
+      $this->objResult = null;
+     }
      
      #GETTERS&SETTER
     
