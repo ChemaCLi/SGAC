@@ -36,7 +36,7 @@
 			}
 			else{//Si ya existe una conexión, la cierra y luego se vuelve a ejecutar éste método para abrir una nueva.
 				$this->mtdDesconectar();
-				$this->mtdConectar();
+				$this->connection = new mysqli(SERVER, USER, PASSWORD, DATABASE);//Crea un objeto mysql de conexión
 			}
 		}
 		
@@ -176,28 +176,19 @@
 			if(is_bool($objMySQL) === false){//Se valida si el resultado es un valor booleano 
 				while($objArrayAssoc = $objMySQL->fetch_array(MYSQLI_BOTH))//Si la cadena viene mal, el programa caerá a partir de aquí. UNSUPPORT MEDIA TYPE.
 					$this->objResult[] = $objArrayAssoc;
-				if(!isset($this->objResult)){
-					//echo "";//NOT FOUND, no hay resultados. ";//Sólo para pruebas. Borrar para despliegue.
+				if(!isset($this->objResult))
 					return null;
-				}
-				else{
-					//echo "";//OK, se devolverán los resultados encontrados. ";//Sólo para pruebas. Borrar para despliegue.
+				else
 					return $this->objResult;
-				}
 				$this->objResult = null;//Libera la variable global.
 			}
 			else{//Si es un booleano como resultado, debería entrar en esta parte				
-				if($objMySQL === false){
-					//echo "";//Operacion fallida. ";//Sólo para pruebas, eliminar en desspliegue
+				if($objMySQL === false)
 					return false;
-				}
-				elseif($objMySQL === true){
-					//echo "";//Operacion exitosa. ";//Sólo para pruebas, eliminar en desspliegue
+				elseif($objMySQL === true)
 					return true;
-				}
-				else{
+				else
 					return false;//Error inesperado
-				}
 			}
 		}
 		
