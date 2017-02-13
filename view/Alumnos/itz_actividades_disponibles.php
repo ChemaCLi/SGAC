@@ -7,7 +7,7 @@
 </div>
 <?php
 	$objControl = new cls_Ctrl_Actividad();
-	$objResult = $objControl->mtdObtenerActividadesDisponiblesInscripcion();
+	$objResult = $objControl->mtdObtenerActividadesDisponibles($_SESSION['strNoControl']);
 	
 	if($objResult > 0){//Hay datos
 		foreach($objResult as $r){
