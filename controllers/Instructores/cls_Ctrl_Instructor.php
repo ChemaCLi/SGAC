@@ -9,15 +9,21 @@
         private $strNombre;
         private $strApPaterno;
         private $strApMaterno;
+        private $chrGenero;
         private $dtmFechaNacimiento;
         private $strDireccion;
         private $strTelefono;
         private $intNIP;
+        private $strEmail;
         private $intBanderaNIPCambiado; //Puede ser que no se deba usar esto aqui, sino en la bd con un trigger
+        private $strNombreActividad;
         private $objModel;
         private $objResult;
         
         # CONSTRUCTOR
+        /*
+         * Objeto del tipo Instructor.
+         */
         public function __construct (){
             $this->objModel = new cls_Mod_Instructor(); //objeto clsmondins cualquier metodo se tiene q obtener de la clase cldmodins... 
         }
@@ -122,6 +128,27 @@
             $this->objResult = null;
         }
         
+        public function mtdValidarInstructor($strCURP, $intNIP){
+            $this->setStrCURP($strCURP);
+            $this->setIntNIP($intNIP);
+            $this->objResult = $this->objModel->mtdValidarInstructor($this->getStrCURP(), $this->getIntNIP());
+            return $this->objResult;
+            $this->objResult = null;
+        }
+        
+        /*
+         * Description: Método que registra los datos de un aspitante a instructor.
+         * Los parámetros deben asignarse a través de los métodos set. Son requeridos:
+         * $strCURP, $strNombre, $strApPaterno, $strApMaterno, $chrGenero, $dtmFechaNacimiento, $strDireccion, $strTelefono, $strEmail y $strNombreActividad
+         * Author: JMCL
+         * Date: 13/02/2017
+         */
+        public function mtdSolicitarAltaInstructor($strCURP, $strNombre, $strApPaterno, $strApMaterno, $chrGenero, $dtmFechaNacimiento, $strDireccion, $strTelefono, $strEmail, $strNombreActividad){
+            $this->objResult = $this->objModel->mtdSolicitarAltaInstructor($strCURP, $strNombre, $strApPaterno, $strApMaterno, $chrGenero, $dtmFechaNacimiento, $strDireccion, $strTelefono, $strEmail, $strNombreActividad);
+            return $this->objResult;
+            $this->objResult = null;
+        }
+        
        # GETTERS&SETTER
        
         function getStrCURP(){ return $this->strCURP; }
@@ -132,14 +159,20 @@
         function setStrApPaterno($strApPaterno){ $this->strApPaterno=$strApPaterno; }
         function getStrApMaterno(){ return $this->strApMaterno; }
         function setStrApMaterno($strApMaterno){ $this->strApMaterno=$strApMaterno; }
+        function getChrGenero(){ return $this->chrGenero; }
+        function setChrGenero($chrGenero){ $this->chrGenero = $chrGenero; }
         function getDtmFechaNacimiento(){ return $this->dtmFechaNacimiento; }
         function setDtmFechaNacimiento($dtmFechaNacimiento){ $this->dtmFechaNacimiento=$dtmFechaNacimiento; }
         function getStrDireccion(){ return $this->strDireccion; }
         function setStrDireccion($strDireccion){ $this->strDireccion=$strDireccion; }
         function getStrTelefono(){ return $this->strTelefono; }
         function setStrTelefono($strTelefono){ $this->strTelefono=$strTelefono; }
+        function getStrEmail(){ return $this->strEmail; }
+        function setStrEmail($strEmail){ $this->strEmail = $strEmail; }
         function getIntNIP(){ return $this->intNIP; }
         function setIntNIP($intNIP){ $this->intNIP=$intNIP; }
+        function getStrNombreActividad(){ return $this->strNombreActividad; }
+        function setStrNombreActividad($strNombreActividad){ $this->strNombreActividad = $strNombreActividad; }
         function getIntBanderaNIPCambiado(){ return $this->intBanderaNIPCambiado; }
         function setIntBanderaNIPCambiado($intBanderaNIPCambiado){ $this->intBanderaNIPCambiado=$intBanderaNIPCambiado; }
     }
