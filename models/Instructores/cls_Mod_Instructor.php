@@ -49,9 +49,16 @@
         }
 		
 		public function mtdSolicitarAltaInstructor($strCURP, $strNombre, $strApPaterno, $strApMaterno, $chrGenero, $dtmFechaNacimiento, $strDireccion, $strTelefono, $strEmail, $strNombreActividad){
-            $strSQL = "INSERT INTO instructores_aspirantes(strCURP, strNombre, strApPaterno, strApMaterno, chrGenero, dtmFechaNacimiento, strDireccion, strTelefono, strEmail, strNombreActividad) values ('{$strCURP}', '{$strNombre}', '{$strApPaterno}', '{$strApMaterno}', '{$chrGenero}', '{$dtmFechaNacimiento}', '{$strDireccion}', '{$strTelefono}', '{$strEmail}', '{$strNombreActividad}');";
+			$strSQL = "SELECT strCURP from ".TABLA_INSTRUCTORES." WHERE strCURP = '{$strCURP}'";
 			$this->objResult = $this->objMySQL->mtdConsultaGenerica($strSQL);
-			return $this->objResult;
+			if($this->objResult > 0)
+				return false;
+			else{
+				$this->objResult = null;
+				$strSQL = "INSERT INTO instructores_aspirantes(strCURP, strNombre, strApPaterno, strApMaterno, chrGenero, dtmFechaNacimiento, strDireccion, strTelefono, strEmail, strNombreActividad) values ('{$strCURP}', '{$strNombre}', '{$strApPaterno}', '{$strApMaterno}', '{$chrGenero}', '{$dtmFechaNacimiento}', '{$strDireccion}', '{$strTelefono}', '{$strEmail}', '{$strNombreActividad}');";
+				$this->objResult = $this->objMySQL->mtdConsultaGenerica($strSQL);
+				return $this->objResult;				
+			}
 			$this->objResult = null;
         }
     } 
