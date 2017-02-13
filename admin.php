@@ -1,6 +1,8 @@
 <?php
     session_start();
-    if($_SESSION['TIPO_USUARIO'] == "ADMINISTRADOR"){
+	if(!isset($_SESSION['TIPO_USUARIO']))
+		echo '<script>window.location="index"</script>';
+    elseif($_SESSION['TIPO_USUARIO'] == "ADMINISTRADOR"){
 ?>
 <!DOCTYPE html>
 <html lang="es">
