@@ -10,6 +10,7 @@ $(document).ready(function(){
  * Carga pagina con la pantalla inicial de opciones de administrador
  */
 function inicio (){
+    crear_loading_contenido();
     $("#contenido").load("view/Administradores/inicio_administrador.php");
 }//END FUNCTION
 
