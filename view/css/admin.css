@@ -293,7 +293,8 @@ div#btn_nueva_actividad > a > img,
 div#btn_gestionar_lugares > a > img,
 div#btn_actividades_inactivas > a > img,
 div#btn_nuevo_lugar > a > img,
-div#btn_actividades_activas > a > img{
+div#btn_actividades_activas > a > img,
+div#btn_nuevo_instructor > a > img{
 	margin: 5px auto;
 	width: 40px;
 	height: 40px;
@@ -303,7 +304,8 @@ div#btn_nueva_actividad,
 div#btn_gestionar_lugares,
 div#btn_actividades_inactivas,
 div#btn_nuevo_lugar,
-div#btn_actividades_activas{
+div#btn_actividades_activas,
+div#btn_nuevo_instructor{
 	width: 50px;
 	height: 50px;
 	right: 0;
@@ -323,16 +325,18 @@ div#btn_nueva_actividad:hover,
 div#btn_gestionar_lugares:hover,
 div#btn_actividades_inactivas:hover,
 div#btn_nuevo_lugar:hover,
-div#btn_actividades_activas:hover{
+div#btn_actividades_activas:hover,
+div#btn_nuevo_instructor:hover{
 	background-color: #495B63; 
 	-webkit-box-shadow: 0px 0px 0px 0px rgba(73,91,99,1);
 }
 
 /*
- * Para el botón de crear nueva actividad complementaria
+ * Para el botón de crear nuevo
  */ 
 div#btn_nueva_actividad{ bottom: 50px; }
-div#btn_nuevo_lugar{ bottom: 50px; } 
+div#btn_nuevo_lugar{ bottom: 50px; }
+div#btn_nuevo_instructor{ bottom: 50px; }
 
 /*
  * Para elboton gestionar lugares
@@ -579,6 +583,70 @@ tr#fila_res > td{
 
 tr#fila_res > td#columna1{ margin-left: 50px; margin-right: 170px; }
 tr#fila_res > td#columna2{ margin-right: 100px; }
+
+/*
+ * PANTALLA GESTIONAR INSTRUCTORES
+ */
+
+/*
+ * Para los bloques de opcion
+ */
+div#opcion_1,
+div#opcion_2,
+div#opcion_3{
+	width: 60%;
+	min-height: 100px;
+	margin: auto;
+	overflow: auto;
+	margin-bottom: 10px;
+}
+
+div#opcion_1{ background: #6090A0; }
+div#opcion_2{ background: #6090A0; }
+div#opcion_3{ background: #6090A0; }
+
+div#opcion_1 > div#opcion_label,
+div#opcion_2 > div#opcion_label,
+div#opcion_3 > div#opcion_label{
+	width: 60%;
+	padding: 2px;
+	min-height: 90px;
+	margin: 5px;
+	float: left;
+	background: #fff;
+}
+
+div#opcion_1 > div#opcion_img,
+div#opcion_2 > div#opcion_img,
+div#opcion_3 > div#opcion_img{
+	width: 30%;
+	border: solid #f00 1px;
+	margin: 5px;
+	min-height: 90px;
+	float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
