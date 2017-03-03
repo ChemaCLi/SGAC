@@ -14,14 +14,14 @@
 	</div>
     <div id="opcion_1">
         <div id="opcion_label"> <h1>Buscador Avanzado</h1></div>
-        <div id="opcion_img"> <img src=""/> </div>
+        <div id="opcion_img"> <img src="view/img/icons/busqueda_avanzada.png" width="50%"/> </div>
 	</div>
 	<div id="opcion_2">
         <div id="opcion_label"> <h1>Aspirantes</h1></div>
-        <div id="opcion_img"> <img src=""/> </div>
+        <div id="opcion_img"> <img src="view/img/icons/aspirante.jpg" width="50%"/> </div>
     </div>
 	<div id="opcion_3">
         <div id="opcion_label"> <h1>Historial</h1></div>
-        <div id="opcion_img"> <img src=""/> </div>
+        <div id="opcion_img"> <img src="view/img/icons/historial.png" width="50%"/> </div>
     </div>
 </section>
