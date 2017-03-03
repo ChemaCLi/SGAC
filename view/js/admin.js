@@ -32,7 +32,7 @@ $(inicio).ajaxStop(function(){
     $("#btn_comunicado").click(function(){
         crear_loading_contenido();
         //$("#contenido").html("<center><figure><img src='view/img/loading.gif' width='30%' height='30%'/><figurecaption>Espere por favor...</figurecaption></figure></center>");
-        $("#contenido").load("view/Administradores/inicio_administrador.php");
+        $("#contenido").load("frm_generar_avisos.php");
     });//END FUNCTION
     $("#btn_ayuda").click(function(){
         crear_loading_contenido();
@@ -467,4 +467,36 @@ function gestion_actividades(objetoDOM){
                 }//END SUCCESS
             });//END AJAX
 }//END FUNCTION
+
+function emitir_aviso(){
+    actividad = "";
+    titulo = "";
+    mensaje = "";
+    url = "scp_validaciones.php";//No  confundir archivos
+    objParametros = {};
+    
+    actividad = $("#actividad").val();
+    titulo = $("#titulo").val();
+    mensaje = $("#mensaje").val();
+    objParametros = {
+            'tipo_consulta' : "generar_aviso",
+            'actividad' : actividad,
+            'titulo' : titulo,
+            'mensaje' : mensaje
+        };
+    
+    console.log(actividad + " " + titulo + " " + mensaje);
+    
+    //Se pone una animació mientras se realizan las operaciones AJAX
+    crear_loading_subcontenido();
+            
+    $.ajax({
+        type: 'GET',
+        url: url,//Obtenida de la que está a nivel de función
+        data: objParametros,//Obtenida de la que está a nivel de función
+        success: function(respuesta){//Respuesta es lo que pone PHP en pantalla, prácticamente es traer al PHP si la consulta fue successfuly
+            $("#contenido").html(respuesta);
+        }//END SUCCESS
+    });//END AJAX
+}
 
